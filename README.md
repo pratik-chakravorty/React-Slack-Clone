@@ -2,4 +2,4 @@
 
 This application is inspired by Slack. It is made using React and Firebase.
 
-[Imgur](https://i.imgur.com/oCWt31P.jpg)
+![alt text](https://i.imgur.com/oCWt31P.jpg "Logo Title Text 1")
