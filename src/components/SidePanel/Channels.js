@@ -21,6 +21,7 @@ class Channels extends React.Component {
     modal: false,
     channelname: "",
     channelDetails: "",
+    typingRef: firebase.database().ref("typing"),
     channelsRef: firebase.database().ref("channels"),
     //needed for channel notifications
     messagesRef: firebase.database().ref("messages"),
@@ -151,6 +152,10 @@ class Channels extends React.Component {
 
   changeChannels = channel => {
     this.setActiveChannel(channel);
+    this.state.typingRef
+      .child(this.state.channel.key)
+      .child(this.state.user.uid)
+      .remove();
     this.clearNotifications();
     this.props.setCurrentChannel(channel);
     this.props.setPrivateChannel(false);
